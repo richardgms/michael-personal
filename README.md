@@ -1,83 +1,111 @@
-# 🔥 Michael Fire Martins - Personal Trainer Website
+# Michael Martins - Personal Trainer (Next.js & Tailwind CSS)
 
-Site do Personal Trainer Michael Martins com paleta **Fire/Energy** - transformação EXTREMA através de metodologia científica. Queime gordura, ganhe músculo, MUDE SUA VIDA!
+Este é o repositório do site profissional de Michael Martins, um personal trainer especialista em transformações corporais. O projeto foi desenvolvido com Next.js, TypeScript e Tailwind CSS, com foco em uma experiência de usuário fluida, design moderno e alta performance, especialmente em dispositivos móveis.
 
-## 🚀 Tecnologias
+## ✨ Visão Geral do Projeto
 
-- **Next.js 14** com App Router
-- **React 18** 
-- **TypeScript**
-- **Tailwind CSS** com tema Fire customizado
-- **Framer Motion** para animações
-- **Lucide React** para ícones
+O site serve como um portfólio digital e uma ferramenta de captação de clientes, apresentando os serviços, resultados e a metodologia de trabalho de Michael. A identidade visual foi atualizada de um tema "agressivo" para uma abordagem mais profissional e motivacional, com um esquema de cores ciano e roxo.
 
-## 🎨 Design System Fire
+## 🚀 Tecnologias Utilizadas
 
-### Paleta de Cores
-- **Primary (Fire)**: `#DC2626` - Vermelho intenso 
-- **Secondary (Energy)**: `#EA580C` - Laranja vibrante
-- **Accent (Power)**: `#F59E0B` - Amarelo dourado
+- **Framework**: [Next.js 14](https://nextjs.org/) (com App Router)
+- **Linguagem**: [TypeScript](https://www.typescriptlang.org/)
+- **Estilização**: [Tailwind CSS 3](https://tailwindcss.com/)
+- **Hospedagem**: Otimizado para [Vercel](https://vercel.com/)
 
-### Efeitos Especiais
-- **Fire Gradient**: Gradiente vermelho → laranja → amarelo
-- **Glow Effects**: Brilho neon com cores fire
-- **Fire Animations**: Flicker, pulse, particles
-- **Neon Text**: Efeito de texto neon com cores fire
+## 🎨 Identidade Visual e Design
+
+A estética do site foi cuidadosamente planejada para ser moderna, limpa e inspiradora.
+
+- **Paleta de Cores**:
+  - `primary-400`: **Ciano** (`#59e8e6`) - Usado para destaques e elementos de ação.
+  - `primary-700`: **Roxo** (`#5d02b9`) - Usado para profundidade, botões e hover-states.
+  - **Fundo**: Gradientes sutis de cinza escuro e preto para criar uma atmosfera premium.
+- **Tipografia**: A fonte principal é a "Inter", garantindo excelente legibilidade em todas as telas.
+- **Logo**: O projeto utiliza um monograma (`monogram.png`) na navegação e o logo completo (`logocompleta.png`) no rodapé para reforçar a marca.
+
+## 📱 Foco em Mobile UX
+
+Uma grande parte do desenvolvimento foi dedicada a criar uma experiência mobile impecável, implementando as seguintes melhorias:
+
+- **Layouts Responsivos**: Todas as seções foram adaptadas para se ajustarem perfeitamente a telas pequenas, com layouts em coluna única e grids que se adaptam.
+- **Carrossel Nativo**: A seção de transformações utiliza um carrossel horizontal com `scroll-snap` em telas médias (removido em favor de um layout vertical em telas muito pequenas para melhor legibilidade).
+- **Tipografia Fluida**: Uso de `clamp()` para que os textos se redimensionem suavemente com o tamanho da tela.
+- **Áreas de Toque (Tap Targets)**: Todos os elementos clicáveis (botões, links) possuem uma área mínima de `44x44px` para facilitar o uso em telas de toque.
+- **Otimização de Performance**:
+  - Imagens com `loading="lazy"` e `decoding="async"`.
+  - Atributo `sizes` para otimizar o LCP (Largest Contentful Paint).
+  - Scroll horizontal desabilitado globalmente.
+- **Safe Area (iOS)**: O layout respeita as áreas de segurança de dispositivos iOS para evitar que a UI fique sob o "notch" ou a barra de gestos.
 
 ## 📁 Estrutura do Projeto
 
 ```
-michael-fire-personal-trainer/
+michael-personal/
 ├── app/
-│   ├── globals.css          # Estilos globais + classes Fire
-│   ├── layout.tsx           # Layout principal com SEO
-│   └── page.tsx             # Página principal
+│   ├── globals.css      # Estilos globais e otimizações de CSS
+│   ├── layout.tsx       # Layout principal com metadados de SEO
+│   └── page.tsx         # Estrutura da página principal
 ├── components/
-│   ├── Navigation.tsx       # Navegação Fire com logo animado
-│   ├── HeroSection.tsx      # Hero com partículas fire
-│   ├── PlansSection.tsx     # Planos Fire/Beast com preços
-│   ├── ResultsSection.tsx   # Transformações explosivas
-│   ├── AboutSection.tsx     # Sobre Michael Fire
-│   ├── CTASection.tsx       # CTA final "Pegar Fogo"
-│   ├── Footer.tsx           # Footer Fire
-│   └── WhatsAppButton.tsx   # Botão WhatsApp fixo animado
-├── designs/
-│   └── design.json          # Sistema de design completo
-├── package.json
-├── tailwind.config.js       # Configuração Fire + animações
-├── tsconfig.json
-├── next.config.js
-└── postcss.config.js
+│   ├── HeroSection.tsx
+│   ├── PlansSection.tsx
+│   ├── ResultsSection.tsx
+│   ├── AboutSection.tsx
+│   ├── CTASection.tsx
+│   ├── Footer.tsx
+│   ├── Navigation.tsx
+│   └── WhatsAppButton.tsx
+├── public/
+│   ├── imagens/         # Fotos de transformações e do Michael
+│   └── logo/            # Arquivos de logo (monograma e completo)
+├── tailwind.config.js   # Configuração do tema (cores, fontes)
+└── package.json
 ```
 
-## 🔧 Instalação e Configuração
+## 🔧 Instalação e Execução
 
-### 1. Instalar Dependências
+### Pré-requisitos
+- [Node.js](https://nodejs.org/) (versão 18 ou superior)
+- [npm](https://www.npmjs.com/) ou [yarn](https://yarnpkg.com/)
 
-```bash
-# Instalar Node.js v18 ou superior
-# Instalar dependências
-npm install
-```
+### Passos
+1. **Clone o repositório:**
+   ```bash
+   git clone https://github.com/seu-usuario/michael-personal.git
+   ```
+2. **Navegue até o diretório do projeto:**
+   ```bash
+   cd michael-personal
+   ```
+3. **Instale as dependências:**
+   ```bash
+   npm install
+   ```
+4. **Execute o servidor de desenvolvimento:**
+   ```bash
+   npm run dev
+   ```
+O site estará disponível em `http://localhost:3000`.
 
-### 2. Configurar Ambiente de Desenvolvimento
+### Scripts Disponíveis
 
-```bash
-# Iniciar servidor de desenvolvimento
-npm run dev
-```
+- `npm run dev`: Inicia o servidor de desenvolvimento.
+- `npm run build`: Compila o projeto para produção.
+- `npm run start`: Inicia um servidor de produção.
+- `npm run lint`: Executa o linter para verificar a qualidade do código.
 
-O site estará disponível em `http://localhost:3000`
+## 📞 Integração com WhatsApp
 
-### 3. Scripts Disponíveis
+O principal canal de contato é o WhatsApp. Todos os botões de CTA (Call-to-Action) direcionam o usuário para o número **+55 83 98123-8895** com mensagens pré-definidas para facilitar o início da conversa.
 
-```bash
-npm run dev          # Desenvolvimento
-npm run build        # Build de produção
-npm run start        # Iniciar produção
-npm run lint         # Verificar código
-npm run type-check   # Verificar TypeScript
-```
+## 🎯 Otimização para SEO
+
+O site foi construído com as melhores práticas de SEO em mente:
+
+- **Metadados Dinâmicos**: Títulos, descrições e palavras-chave otimizadas no arquivo `layout.tsx`.
+- **Open Graph e Twitter Cards**: Tags configuradas para garantir uma boa aparência ao compartilhar o link em redes sociais.
+- **Performance**: O Next.js garante uma renderização rápida, e as imagens são otimizadas para não prejudicar o tempo de carregamento.
+- **Acessibilidade**: Uso de tags semânticas e atributos `aria-label` para garantir que o site seja acessível a todos.
 
 ## 🔥 Funcionalidades Fire
 
@@ -187,67 +215,3 @@ colors: {
 .btn-fire          # Botão fire padrão
 .card-fire         # Card fire padrão
 ```
-
-## 🚀 Deploy
-
-### Vercel (Recomendado)
-```bash
-npm install -g vercel
-vercel --prod
-```
-
-### Netlify
-```bash
-npm run build
-# Upload pasta .next para Netlify
-```
-
-### VPS/Servidor
-```bash
-npm run build
-npm start
-```
-
-## 📊 Analytics e Conversão
-
-### Eventos Importantes
-- Clique WhatsApp (todos os CTAs)
-- Scroll até planos
-- Clique nos planos
-- Tempo na página
-- Clique resultados
-
-### Métricas Fire
-- Taxa de conversão WhatsApp
-- Plano mais escolhido
-- Seção com mais engajamento
-- Tempo médio de sessão
-
-## 🔧 Manutenção
-
-### Atualizar Preços
-Editar valores em:
-- `components/PlansSection.tsx`
-- `components/HeroSection.tsx` (se necessário)
-
-### Adicionar Resultados
-Editar array em:
-- `components/ResultsSection.tsx`
-
-### Modificar Cores
-Editar:
-- `tailwind.config.js`
-- `app/globals.css`
-
-## 📞 Suporte
-
-Para dúvidas sobre o código:
-- Abrir issue no repositório
-- Verificar documentação Next.js
-- Consultar documentação Tailwind
-
----
-
-**🔥 MICHAEL FIRE MARTINS - TRANSFORMAÇÃO EXTREMA!**
-
-> *"Queime gordura, ganhe músculo, MUDE SUA VIDA!"* 
